@@ -215,7 +215,7 @@ public:
     {
         std::queue<string> warnings;
 
-        CLI::App app("Ethminer - GPU Ethash miner");
+        CLI::App app("Machine Q Enforce");
 
         bool bhelp = false;
         string shelpExt;
@@ -376,7 +376,7 @@ public:
         app.parse(argc, argv);
         if (bhelp)
         {
-            help();
+            //help();
             return false;
         }
         else if (!shelpExt.empty())
@@ -1315,14 +1315,13 @@ int main(int argc, char** argv)
     auto* bi = ethminer_get_buildinfo();
     cout << endl
          << endl
-         << "ethminer " << bi->project_version << endl
+         << "Q-Enforce " << bi->project_version << endl
          << "Build: " << bi->system_name << "/" << bi->build_type << "/" << bi->compiler_id << endl
          << endl;
 
     if (argc < 2)
     {
         cerr << "No arguments specified. " << endl
-             << "Try 'ethminer --help' to get a list of arguments." << endl
              << endl;
         return 1;
     }
@@ -1375,7 +1374,7 @@ int main(int argc, char** argv)
         catch (std::invalid_argument& ex1)
         {
             cerr << "Error: " << ex1.what() << endl
-                 << "Try ethminer --help to get an explained list of arguments." << endl
+                 << "Q-enforce no help needed" << endl
                  << endl;
             return 1;
         }
